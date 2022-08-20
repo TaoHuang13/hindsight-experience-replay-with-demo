@@ -1,9 +1,4 @@
-from cmath import log
-from random import random
-from turtle import done
-from typing import Dict
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 import copy
 import numpy as np
@@ -127,6 +122,12 @@ class HerDemo(BaseAgent):
         # Refer to https://arxiv.org/pdf/1709.10089.pdf
         if is_demo:
             bc_loss = self.norm_dist(action_out, action)
+
+            # Q-filter
+            with torch.no_grad():
+                q_filter = self.critic_target(obs, action) > self.critic_target(obs, action_out)
+            bc_loss = q_filter * bc_loss
+            
             actor_loss = -(Q_out + self.aux_weight * bc_loss).mean()
         else:
             actor_loss = -(Q_out).mean()
