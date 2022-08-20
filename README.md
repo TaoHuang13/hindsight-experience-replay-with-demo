@@ -19,7 +19,7 @@ conda activate herdemo
 pip install -e .
 ```
 
-Then add one line of code in `gym/gym/envs/__init\__.py` to register SurRoL tasks:
+Then add one line of code in `gym/gym/envs/__init__.py` to register SurRoL tasks:
 ```python
 import surrol.gym
 ```
