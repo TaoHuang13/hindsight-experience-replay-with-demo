@@ -1,5 +1,5 @@
 # Hindsight Experience Replay with Demonstrations
-Pytorch implementation of [Hindsight Experience Replay](https://arxiv.org/abs/1707.01495) (HER) with expert demonstrations. Please refer to the origincal paper [Overcoming Exploration in Reinforcement Learning with Demonstrations](https://arxiv.org/abs/1709.1008) for more details.
+PyTorch implementation of [Hindsight Experience Replay](https://arxiv.org/abs/1707.01495) (HER) with expert demonstrations. Please refer to the original paper [Overcoming Exploration in Reinforcement Learning with Demonstrations](https://arxiv.org/abs/1709.1008) for more details.
 ## Acknowledgement
 - [OpenAI Baselines](https://github.com/openai/baselines) for the tensorflow -based implementation.
 - [SurRoL](https://github.com/med-air/SurRoL]) for the training and testing simulation platform.
@@ -19,7 +19,7 @@ conda activate herdemo
 pip install -e .
 ```
 
-Then add one line of code in **gym/gym/envs/__init\__.py** to register SurRoL tasks:
+Then add one line of code in `gym/gym/envs/__init\__.py` to register SurRoL tasks:
 ```python
 import surrol.gym
 ```
