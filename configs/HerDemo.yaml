@@ -1,0 +1,54 @@
+cwd: ${hydra:runtime.output_dir}
+
+# Training params
+num_train_steps: 100_000
+num_seed_steps: 1_00
+num_eval_episodes: 20
+num_demo: 100
+eval_frequency: 1_000
+replay_buffer_capacity: 1_000_000
+checkpoint_frequency: 20_000
+log_frequency: 2_00
+update_epoch: 40
+batch_size: 128
+save_video: True 
+device: cuda:0
+seed: 1
+task_name: NeedlePick-v0
+
+# Agent params
+agent:
+  name: HerDemo
+  device: ${device}
+  obs_dim_o: ???
+  obs_dim_g: ???
+  act_dim: ???
+  discount: 0.99
+  reward_scale: 1
+
+  actor_lr: 1e-3  
+  critic_lr: 1e-3
+  random_eps: 0.3
+  noise_eps: 0.2
+  aux_weight: 5
+  action_l2: 1
+  p_dist: 2
+  soft_target_tau: 0.05
+  clip_obs: 200
+  norm_clip: 5
+  norm_eps: 0.01
+  hidden_dim: 256
+  sampler:
+    type: her
+    strategy: future
+    k: 4
+  log_interval: ${log_frequency}
+  num_seed_steps: ${num_seed_steps}
+  update_epoch: ${update_epoch}
+
+# workding space
+hydra:
+  run:
+    dir: ./exp_local/${task_name}/${agent.name}/${agent.name}_${hydra.job.override_dirname}
+  sweep:
+    dir: ./exp/${now:%Y.%m.%d}/${now:%H%M}_${agent_cfg.experiment}
