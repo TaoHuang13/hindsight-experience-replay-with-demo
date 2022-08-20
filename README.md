@@ -1,5 +1,9 @@
 # Hindsight Experience Replay with Demonstrations
-PyTorch implementation of [Hindsight Experience Replay](https://arxiv.org/abs/1707.01495) (HER) with expert demonstrations. Please refer to the original paper [Overcoming Exploration in Reinforcement Learning with Demonstrations](https://arxiv.org/abs/1709.1008) for more details.
+PyTorch implementation of [Hindsight Experience Replay](https://arxiv.org/abs/1707.01495) (HER) with expert demonstrations in surgical robot manipulation tasks. Please refer to the original paper [Overcoming Exploration in Reinforcement Learning with Demonstrations](https://arxiv.org/abs/1709.1008) for more details.
+<p align="center">
+  <img width="100%" src="https://i.imgur.com/sVsrFtg.png">
+</p>
+
 ## Acknowledgement
 - [OpenAI Baselines](https://github.com/openai/baselines) for the tensorflow -based implementation.
 - [SurRoL](https://github.com/med-air/SurRoL]) for the training and testing simulation platform.
