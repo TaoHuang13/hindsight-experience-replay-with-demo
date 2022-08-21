@@ -1,5 +1,5 @@
 # Hindsight Experience Replay with Demonstrations
-PyTorch implementation of [Hindsight Experience Replay](https://arxiv.org/abs/1707.01495) (HER) with expert demonstrations in surgical robot manipulation tasks. Please refer to the original paper [Overcoming Exploration in Reinforcement Learning with Demonstrations](https://arxiv.org/abs/1709.1008) for more details.
+PyTorch implementation of the paper [Overcoming Exploration in Reinforcement Learning with Demonstrations](https://arxiv.org/abs/1709.1008) in surgical robot manipulation tasks.
 <p align="left">
   <img width="98%" src="https://i.imgur.com/sVsrFtg.png">
 </p>
